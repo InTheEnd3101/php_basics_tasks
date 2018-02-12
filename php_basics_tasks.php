@@ -188,7 +188,7 @@ if (isset($_GET['a']) && isset($_GET['b']) && isset($_GET['operator'])) {
     $b = filter_var($_GET['b'], FILTER_VALIDATE_FLOAT);
     $operator = filter_var($_GET['operator'], FILTER_SANITIZE_STRING);
     if ($a === false || $b === false || !$operator) {
-        $result = 'Ошибка';
+        $result = '<font color=\"ff0000\">Ошибка. Введите данные.</font>';
     } else {
         switch ($operator) {
             case '+':
@@ -202,14 +202,14 @@ if (isset($_GET['a']) && isset($_GET['b']) && isset($_GET['operator'])) {
                 break;
             case '/':
                 if (!$b) {
-                    $result = 'Деление на ноль';
+                    $result = '<font color=\"ff0000\">Ошибка. Деление на ноль</font>';
                 } else {
                     $result = "{$a} {$operator} {$b} = " . ($a / $b);
                 }
                 break;
             case '%':
                 if (!$b) {
-                    $result = 'Деление на ноль';
+                    $result = '<font color=\"ff0000\">Ошибка. Деление на ноль</font>';
                 } else {
                     $result = "{$a} {$operator} {$b} = " . ($a % $b);
                 }
