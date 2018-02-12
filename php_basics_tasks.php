@@ -202,20 +202,20 @@ if (isset($_GET['a']) && isset($_GET['b']) && isset($_GET['operator'])) {
                 break;
             case '/':
                 if (!$b) {
-                    $result = '<font color=\"ff0000\">Ошибка. Деление на ноль</font>';
+                    $result = '<font color=\"ff0000\">Ошибка. Вы патаетесь делить на ноль.</font>';
                 } else {
                     $result = "{$a} {$operator} {$b} = " . ($a / $b);
                 }
                 break;
             case '%':
                 if (!$b) {
-                    $result = '<font color=\"ff0000\">Ошибка. Деление на ноль</font>';
+                    $result = '<font color=\"ff0000\">Ошибка. Вы патаетесь делить на ноль.</font>';
                 } else {
                     $result = "{$a} {$operator} {$b} = " . ($a % $b);
                 }
                 break;
             default:
-                $result = 'Ошибка';
+                $result = '<font color=\"ff0000\">Ошибка</font>';
         }
     }
 }
